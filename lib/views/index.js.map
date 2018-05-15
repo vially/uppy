@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/views/index.js"],"names":["ProviderView","require","module","exports"],"mappings":"AAAA,IAAMA,eAAeC,QAAQ,gBAAR,CAArB;;AAEAC,OAAOC,OAAP,GAAiB;AACfH;AADe,CAAjB","file":"index.js","sourcesContent":["const ProviderView = require('./ProviderView')\n\nmodule.exports = {\n  ProviderView\n}\n"]}
