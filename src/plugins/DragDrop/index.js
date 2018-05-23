@@ -74,8 +74,9 @@ module.exports = class DragDrop extends Plugin {
     return true
   }
 
-  handleDrop (files) {
+  handleDrop (files, directories) {
     this.uppy.log('[DragDrop] Files dropped')
+    this.uppy.emit('directories-dropped', directories)
 
     files.forEach((file) => {
       this.uppy.addFile({
@@ -153,8 +154,8 @@ module.exports = class DragDrop extends Plugin {
     if (target) {
       this.mount(target, this)
     }
-    this.removeDragDropListener = dragDrop(this.el, (files) => {
-      this.handleDrop(files)
+    this.removeDragDropListener = dragDrop(this.el, (files, pos, fileList, directories) => {
+      this.handleDrop(files, directories)
       this.uppy.log(files)
     })
   }
